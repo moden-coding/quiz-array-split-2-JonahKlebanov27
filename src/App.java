@@ -5,7 +5,7 @@
  *
  * This method:
  *  -takes in an array of integers that will have a length. 
- *  -If the array has a length of 2 or more, return the sum of the first values
+ *  -If the array has a length of 2 or more, return the sum of the first two values
  *  -If the array has a length of 1, just return that value
  *  -If the array has a length of 0, return 0.
  *  
@@ -27,7 +27,7 @@ public class App {
     public static void main(String[] args)  {
         //firstTwoSum example
         System.out.println("With input [1, 2, 3], you should get: 3. You got: " + firstTwoSum(new int[]{1,2,3}));
-        System.out.println("With input [5, 6, 9, 2], you should get: 11. You got: " + firstTwoSum(new int[]{1,2,3}));
+        System.out.println("With input [5, 6, 9, 2], you should get: 11. You got: " + firstTwoSum(new int[]{5, 6, 9, 2}));
         System.out.println("With input [7], you should get: 7. You got: " + firstTwoSum(new int[]{7}));
         System.out.println("With input [], you should get: 0. You got: " + firstTwoSum(new int[]{}));
         
@@ -40,14 +40,28 @@ public class App {
     }
 
     public static int firstTwoSum(int[] nums) {
+       
+        if(nums.length>= 2){
+            int sum = nums[0]+nums[1];
 
-        return -1; //this is a placeholder
+            return sum;
+        }if(nums.length==1){
+          int sum2 = nums[0];
+          
+          return sum2;
+        }
+          return 0;
+
+         //this is a placeholder
 
     }
 
     public static int minWordLength(String sentence){
+      String words[] = sentence.split(" ");
+      
+      int minWordLength = words[0].length();
 
 
-        return -1; //this is a placeholder
+        return minWordLength; //this is a placeholder
     }
 }
